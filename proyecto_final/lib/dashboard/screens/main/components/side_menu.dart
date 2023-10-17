@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:proyecto_final/categories/screens/categoryPage.dart';
+import 'package:proyecto_final/comentarios/screen/comentarioPage.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 import 'package:proyecto_final/theme/theme_manager.dart';
 
@@ -39,12 +41,22 @@ class _SideMenuState extends State<SideMenu> {
           DrawerListTile(
             title: "Categorías",
             svgSrc: "assets/icons/hotel.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CategoryPage()),
+            );
+            },
           ),
           DrawerListTile(
             title: "Comentarios",
             svgSrc: "assets/icons/comentarios.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ComentarioPage()),
+            );
+            },
           ),
           DrawerListTile(
             title: "Mis Chats",
