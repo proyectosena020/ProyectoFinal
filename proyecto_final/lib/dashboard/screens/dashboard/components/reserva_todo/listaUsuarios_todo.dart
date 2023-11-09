@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:proyecto_final/models/Usuarios.dart';
+import 'package:proyecto_final/generated/translations.g.dart';
+import 'package:proyecto_final/models/UsuariosModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 
 // Tabla de todos los usuarios del aplicativo
@@ -12,39 +13,97 @@ class ListaUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final texts = Translations.of(context);
+
+    List UsuariosList = [
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "Administrador, Anfitrion",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+      UsuariosModel(
+        icon: "assets/icons/persona.svg",
+        nombre: "Hernan Cubillos",
+        correo: "henanc2023@gmail.com",
+        rol: "${texts.listUser.admin}, ${texts.listUser.host}",
+      ),
+    ];
 
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: isDark?secondaryColor:const Color(0xFFFF2F0F2),
+        color: isDark ? secondaryColor : const Color(0xFFFF2F0F2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Todos los usuarios",
+            texts.listUser.allUsers,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
             height: 300,
             width: double.infinity,
             child: InteractiveViewer(
+              scaleEnabled: false,
               constrained: false,
               child: DataTable(
                 columnSpacing: defaultPadding,
                 // minWidth: 600,
-                columns: const [
+                columns: [
                   DataColumn(
-                    label: Text("Nombre"),
+                    label: Text(texts.listUser.name),
                   ),
                   DataColumn(
-                    label: Text("Correo"),
+                    label: Text(texts.listUser.email),
                   ),
                   DataColumn(
-                    label: Text("Rol"),
+                    label: Text(texts.listUser.rol),
                   ),
                   DataColumn(
                     label: Text(""),
@@ -60,8 +119,8 @@ class ListaUsuario extends StatelessWidget {
                   ),
                 ],
                 rows: List.generate(
-                  listaUsuario.length,
-                  (index) => UsuariosDataRow(listaUsuario[index], context),
+                  UsuariosList.length,
+                  (index) => UsuariosDataRow(UsuariosList[index], context),
                 ),
               ),
             ),
@@ -72,30 +131,25 @@ class ListaUsuario extends StatelessWidget {
   }
 }
 
-DataRow UsuariosDataRow(Usuarios usuariosInfo, BuildContext context) {
-
+DataRow UsuariosDataRow(UsuariosModel usuariosInfo, BuildContext context) {
   bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+  final texts = Translations.of(context);
   return DataRow(
     cells: [
       DataCell(
-        SingleChildScrollView(
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              SvgPicture.asset(
-                usuariosInfo.icon!,
-                height: 30,
-                width: 30,
-                color: Colors.deepPurple,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-                child: Text(usuariosInfo.nombre!),
-              ),
-            ],
-          ),
+        Row(
+          children: [
+            SvgPicture.asset(
+              usuariosInfo.icon!,
+              height: 30,
+              width: 30,
+              color: Colors.deepPurple,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+              child: Text(usuariosInfo.nombre!),
+            ),
+          ],
         ),
       ),
       DataCell(Text(usuariosInfo.correo!)),
@@ -104,25 +158,25 @@ DataRow UsuariosDataRow(Usuarios usuariosInfo, BuildContext context) {
         onPressed: () {},
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(primaryColor)),
-        child: const Text("Ver"),
+        child: Text(texts.myActiveReservations.toSee),
       )),
       DataCell(ElevatedButton(
         onPressed: () {},
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(primaryColor)),
-        child: const Text("Actualizar"),
+        child: Text(texts.myActiveReservations.toUpdate),
       )),
       DataCell(ElevatedButton(
         onPressed: () {},
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(primaryColor)),
-        child: const Text("Eliminar"),
+        child: Text(texts.delete),
       )),
       DataCell(IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
             "assets/icons/pdf.svg",
-            color: isDark?Colors.white:primaryColor,
+            color: isDark ? Colors.white : primaryColor,
             width: 20,
             height: 20,
           ))),

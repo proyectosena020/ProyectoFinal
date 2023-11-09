@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/models/CategoriaModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
+
+import '../../generated/translations.g.dart';
 
 
 // diseño de la Card la cual contendra la información de cada una de las categorías y los botones para actualizar y eliminar
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+
+class CategoryCard extends StatefulWidget {
+
+  final CategoriaModel categoria;
+
+  const CategoryCard({Key? key, required this.categoria}) : super(key: key);
+
+  @override
+  State<CategoryCard> createState() => _CategoryCardState(categoria: categoria);
+}
+
+class _CategoryCardState extends State<CategoryCard> {
+  final CategoriaModel categoria;
+
+  _CategoryCardState({required this.categoria});
+
 
   @override
   Widget build(BuildContext context) {
+    final texts = Translations.of(context);
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
       width: MediaQuery.of(context).size.width,
@@ -31,21 +50,21 @@ class CategoryCard extends StatelessWidget {
             Colors.black.withOpacity(0.35),
             BlendMode.multiply,
           ),
-          image: const NetworkImage("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/fc/c6/ba/briceno-18-campo-de-golf.jpg?w=1200&h=1200&s=1"),
+          image: NetworkImage(categoria.imagen),
           fit: BoxFit.cover,
         ),
       ),
       child: Stack(
         children: [
-          const Align(
+          Align(
             alignment: Alignment.center,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
-                "Canchas de Golf",
-                style: TextStyle(
-                  fontSize: 19,
-                  color: Colors.white
+                categoria.titulo,
+                style: const TextStyle(
+                    fontSize: 19,
+                    color: Colors.white
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
@@ -69,7 +88,7 @@ class CategoryCard extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: (){
-                          
+
                         },
                         icon: const Icon(
                           Icons.edit,

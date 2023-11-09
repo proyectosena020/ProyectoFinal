@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/Sitio.dart';
+import 'package:proyecto_final/generated/translations.g.dart';
+import 'package:proyecto_final/models/TodosSitiosModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 
 // Contenedor el cual encapsula la vista previa de todos los sitios que hay en el aplicativo
@@ -13,7 +15,7 @@ class Sitios extends StatelessWidget {
   Widget build(BuildContext context) {
 
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+    final texts = Translations.of(context);
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
@@ -24,7 +26,7 @@ class Sitios extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Todos los sitios",
+            texts.allSites,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
@@ -33,10 +35,10 @@ class Sitios extends StatelessWidget {
             child: Container(
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: 30,
+                  itemCount: TodosSitiosList.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    return const SitioCard();
+                    return SitioCard(sitio: TodosSitiosList[index]);
                   }),
             ),
           ),

@@ -1,0 +1,127 @@
+{
+    "cabin": {
+        "cabinone": {
+            "name": "5-star Hotel",
+            "location": "Bogota",
+            "arrive": "30 min from Bogota",
+            "date": "Oct 16-17"
+        },
+        "cabintwo": {
+            "name": "Wooden Cabin",
+            "location": "Arcabuco, Colombia",
+            "arrive": "Near the city center",
+            "date": "Nov 15-20"
+        },
+        "cabinthree": {
+            "name": "Lake View Cabin",
+            "location": "Switzerland",
+            "arrive": "Near the city center",
+            "date": "Nov 10-12"
+        },
+        "cabinfour": {
+            "name": "Cabin on the Outskirts",
+            "location": "Medellin, Antioquia",
+            "arrive": "30 minutes from the city center",
+            "date": "Nov 15-20"
+        }
+    },
+    "seaview": {
+        "seaviewone": {
+            "name": "Venice House",
+            "location": "Venice",
+            "arrive": "Best sea view",
+            "date": "Nov 15-20"
+        },
+        "seaviewtwo": {
+            "name": "Waves Hotel",
+            "location": "Barranquilla, Colombia",
+            "arrive": "15 hours from Bogota",
+            "date": "Oct 16-17"
+        },
+        "seaviewthree": {
+            "name": "The Olives",
+            "location": "Canada",
+            "arrive": "Incredible views",
+            "date": "Oct 16-17"
+        },
+        "seaviewfour": {
+            "name": "Palm Trees",
+            "location": "Taita Lake",
+            "arrive": "30 minutes from Taita",
+            "date": "Dec 16-17"
+        }
+    },
+    "unique": {
+        "unicone": {
+            "name": "Imperial Hotel",
+            "location": "Switzerland",
+            "arrive": "30 minutes from the city center",
+            "date": "Nov 15-20"
+        },
+        "unictwo": {
+            "name": "The Palms",
+            "location": "Taita Lake",
+            "arrive": "30 minutes from Taita",
+            "date": "Dec 16-17"
+        },
+        "unicthree": {
+            "name": "Lake View Cabin",
+            "location": "Switzerland",
+            "arrive": "Near the city center",
+            "date": "Nov 10-12"
+        }
+    },
+    "castle": {
+        "castleone": {
+            "name": "Lebron Castle",
+            "location": "Russia",
+            "arrive": "30 minutes from Moscow",
+            "date": "Nov 15-20"
+        },
+        "castletwo": {
+            "name": "LongVoton Castle",
+            "location": "London",
+            "arrive": "In the city center",
+            "date": "Nov 15-20"
+        },
+        "castlethree": {
+            "name": "Imperial Hotel",
+            "location": "Switzerland",
+            "arrive": "30 minutes from the city center",
+            "date": "Nov 15-20"
+        },
+        "castlefour": {
+            "name": "The Muiscas",
+            "location": "Tota, Colombia",
+            "arrive": "3 hours from Bogota",
+            "date": "Nov 15-20"
+        }
+    },
+    "habitation": {
+        "habitationone": {
+            "name": "5-star Hotel",
+            "location": "Bogota",
+            "arrive": "30 minutes from Bogota",
+            "date": "Nov 15-20"
+        },
+        "habitationtwo": {
+            "name": "LeBron Hotel",
+            "location": "Paris, France",
+            "arrive": "30 minutes from the city center",
+            "date": "Nov 15-25"
+        },
+        "habitationthree": {
+            "name": "Lake View Cabin",
+            "location": "Switzerland",
+            "arrive": "Near the city center",
+            "date": "Nov 10-12"
+        },
+        "habitationfour": {
+            "name": "Beautiful",
+            "location": "Arcabuco, Colombia",
+            "arrive": "3 hours from Bogota",
+            "date": "Nov 15-20"
+        }
+    },
+    "text_search": "Try \"Johannesburg\""
+}

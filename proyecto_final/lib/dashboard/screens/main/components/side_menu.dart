@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:proyecto_final/categories/screens/categoryPage.dart';
 import 'package:proyecto_final/comentarios/screen/comentarioPage.dart';
+import 'package:proyecto_final/generated/translations.g.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 import 'package:proyecto_final/theme/theme_manager.dart';
 
@@ -20,26 +21,27 @@ class SideMenu extends StatefulWidget {
 class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
+    final texts = Translations.of(context);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Drawer(
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+            child: Image.asset("assets/images/logo2.png",),
           ),
           DrawerListTile(
-            title: "Home",
+            title: texts.main.home,
             svgSrc: "assets/icons/home.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Mi Perfil",
+            title: texts.main.myProfile,
             svgSrc: "assets/icons/persona.svg",
-            press: () {},
+            press: () {
+            },
           ),
           DrawerListTile(
-            title: "Categorías",
+            title: texts.main.categories,
             svgSrc: "assets/icons/hotel.svg",
             press: () {
               Navigator.push(
@@ -49,7 +51,7 @@ class _SideMenuState extends State<SideMenu> {
             },
           ),
           DrawerListTile(
-            title: "Comentarios",
+            title: texts.main.comments,
             svgSrc: "assets/icons/comentarios.svg",
             press: () {
               Navigator.push(
@@ -59,22 +61,23 @@ class _SideMenuState extends State<SideMenu> {
             },
           ),
           DrawerListTile(
-            title: "Mis Chats",
+            title: texts.main.myChats,
             svgSrc: "assets/icons/chat.svg",
-            press: () {},
+            press: () {
+            },
           ),
           DrawerListTile(
-            title: "Nuevo Sitio",
+            title: texts.main.newSite,
             svgSrc: "assets/icons/addsitio.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Explorar",
+            title: texts.main.toExplore,
             svgSrc: "assets/icons/explorar.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: isDark ? "Modo Claro" : "Modo Oscuro",
+            title: isDark ? texts.main.clearmode : texts.main.darkmode,
             svgSrc: isDark ? "assets/icons/Light.svg" : "assets/icons/dark.svg",
             press: () {
               var newValue = ThemeMode.dark;
@@ -93,9 +96,10 @@ class _SideMenuState extends State<SideMenu> {
             },
           ),
           DrawerListTile(
-            title: "Cerrar Sesión",
+            title: texts.main.logout,
             svgSrc: "assets/icons/logout.svg",
-            press: () {},
+            press: () {
+            },
           ),
         ],
       ),

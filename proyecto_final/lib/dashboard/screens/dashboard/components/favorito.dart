@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/models/FavoritoModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
+
+import '../../../../generated/translations.g.dart';
 
 // Card donde estaran los sitios favoritos del usuario
 
 class FavoritoCard extends StatelessWidget {
+
+  final FavoritoModel favorito;
+
   const FavoritoCard({
-    Key? key,
+    Key? key, required this.favorito,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -21,7 +29,7 @@ class FavoritoCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               boxShadow: const [
                 BoxShadow(
-                    color: primaryColor, blurRadius: 30, offset: Offset(10, 10))
+                    color: primaryColor, blurRadius: 10, offset: Offset(5, 5))
               ]),
           child: Column(
             children: <Widget>[
@@ -30,9 +38,9 @@ class FavoritoCard extends StatelessWidget {
                 height: 300,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: const Image(
+                  child: Image(
                     image: NetworkImage(
-                        "https://hips.hearstapps.com/hmg-prod/images/casa-de-diseno-contemporaneo26-1637602658.jpg?crop=1xw:0.9066731141199227xh;center,top&resize=1200:*"),
+                        favorito.imagen),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -44,17 +52,17 @@ class FavoritoCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Guatavita, Colombia",
+              favorito.titulo,
               style: Theme.of(context).textTheme.titleSmall,
             ),
             Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.star,
-                  color: Colors.white,
+                  color: isDark ? Colors.white : primaryColor,
                 ),
                 Text(
-                  "4.9",
+                  favorito.calificacion,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
@@ -64,14 +72,16 @@ class FavoritoCard extends StatelessWidget {
         Row(
           children: [
             Text(
-              "\$311,856 COP",
+              "\$"+favorito.precio,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall!
                   .copyWith(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(width: 10,),
-            const Text("noche"),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(Translations.of(context).site.nights),
           ],
         ),
       ],

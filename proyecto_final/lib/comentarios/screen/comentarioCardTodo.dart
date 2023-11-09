@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 
+import '../../generated/translations.g.dart';
+
 // diseño de la Card animada donde va a estar la información de cada comentario del aplicativo
 
 class ComentarioCardTodo extends StatefulWidget {
@@ -16,9 +18,6 @@ class _ComentarioCardTodoState extends State<ComentarioCardTodo> {
   bool isBack = true;
   double angle = 0;
 
-  String comment =
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies integer proin suscipit, eleifend nunc taciti habitant mi fames justo suspendisse accumsan penatibus, facilisis senectus molestie nascetur litora tristique vulputate parturient habitasse dictum. Fringilla vestibulum odio tincidunt commodo porttitor gravida posuere, suspendisse dictumst nulla maecenas taciti per diam ut, enim leo vivamus sodales libero porta. Cubilia sem augue neque tortor cras odio proin molestie habitasse magna iaculis ultrices, lobortis mattis arcu lacus metus eu ullamcorper aliquet etiam curae magnis.";
-
   @override
   Widget build(BuildContext context) {
     void _flip() {
@@ -26,6 +25,9 @@ class _ComentarioCardTodoState extends State<ComentarioCardTodo> {
         angle = (angle + pi) % (2 * pi);
       });
     }
+
+    final texts = Translations.of(context);
+    String comment = texts.comments.comment;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
@@ -80,7 +82,7 @@ class _ComentarioCardTodoState extends State<ComentarioCardTodo> {
                                       children: [
                                         SizedBox(height: defaultPadding),
                                         Text(
-                                          "Sitio: Cabaña la niña",
+                                            texts.comments.site,
                                           style: Theme.of(context)
                                               .textTheme
                                               .titleSmall!
@@ -88,47 +90,42 @@ class _ComentarioCardTodoState extends State<ComentarioCardTodo> {
                                         ),
                                         const SizedBox(height: defaultPadding),
                                         const Text(
-                                          "Usuario:",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Eduardo Manzanares",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Limpieza: 4.2",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Comucicación: 3.2",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Llegada: 4.2",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Fiabilidad: 3.2",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Ubicación: 4.2",
-                                          style: TextStyle(color: primaryColor),
-                                        ),
-                                        const SizedBox(height: defaultPadding),
-                                        const Text(
-                                          "Precio: 3.2",
+                                          "Usuario: 1",
                                           style: TextStyle(color: primaryColor),
                                         ),
                                         const SizedBox(height: defaultPadding),
                                         Text(
-                                          "Comentario:",
+                                          texts.comments.cleaning + " 4.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.communication + "3.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.arrival + "4.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.reliability  + "3.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.location  + "4.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.price + "3.2",
+                                          style: TextStyle(color: primaryColor),
+                                        ),
+                                        const SizedBox(height: defaultPadding),
+                                        Text(
+                                          texts.comments.commentsTwo,
                                           style: Theme.of(context)
                                               .textTheme
                                               .titleSmall!

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:proyecto_final/models/ReservaSitio.dart';
+import 'package:proyecto_final/models/ReservaSitioModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
+
+import '../../../../../generated/translations.g.dart';
 
 // Tabla de todas las reservas finalizadas que se han hecho en los sitios del anfitrión
 
@@ -12,20 +14,65 @@ class ReservaFinalizadaA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final texts = Translations.of(context);
+
+    List ReservaAnfFinalList = [
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+      ReservaAnfFinalModel(
+        icon: "assets/icons/finalizado.svg",
+        sitio: texts.myActiveReservations.userRservation.siteone,
+        usuario: "Eduardo Reyes",
+        fecha: "27-02-2021",
+      ),
+    ];
 
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: isDark?secondaryColor:const Color(0xFFFF2F0F2),
+        color: isDark ? secondaryColor : const Color(0xFFFF2F0F2),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Reservas finalizadas de mis sitios",
+            texts.completedReservationsForMySites,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
@@ -33,18 +80,19 @@ class ReservaFinalizadaA extends StatelessWidget {
             height: 300,
             child: InteractiveViewer(
               constrained: false,
+              scaleEnabled: false,
               child: DataTable(
                 columnSpacing: defaultPadding,
                 // minWidth: 600,
-                columns: const [
+                columns: [
                   DataColumn(
-                    label: Text("Sitio"),
+                    label: Text(texts.myActiveReservations.site),
                   ),
                   DataColumn(
-                    label: Text("Usuario"),
+                    label: Text(texts.myActiveReservations.user),
                   ),
                   DataColumn(
-                    label: Text("Fecha"),
+                    label: Text(texts.myActiveReservations.date),
                   ),
                   DataColumn(
                     label: Text(""),
@@ -54,8 +102,8 @@ class ReservaFinalizadaA extends StatelessWidget {
                   ),
                 ],
                 rows: List.generate(
-                  demoReservaAnfF.length,
-                  (index) => ReservaFaDataRow(demoReservaAnfF[index], context),
+                  ReservaAnfFinalList.length,
+                  (index) => ReservaFaDataRow(ReservaAnfFinalList[index], context),
                 ),
               ),
             ),
@@ -66,29 +114,25 @@ class ReservaFinalizadaA extends StatelessWidget {
   }
 }
 
-DataRow ReservaFaDataRow(ReservaAnfFinal reservaFInfo, BuildContext context) {
-
+DataRow ReservaFaDataRow(ReservaAnfFinalModel reservaFInfo, BuildContext context) {
   bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+  final texts = Translations.of(context);
   return DataRow(
     cells: [
       DataCell(
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              SvgPicture.asset(
-                reservaFInfo.icon!,
-                height: 30,
-                width: 30,
-                color: Colors.orange,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-                child: Text(reservaFInfo.sitio!),
-              ),
-            ],
-          ),
+        Row(
+          children: [
+            SvgPicture.asset(
+              reservaFInfo.icon!,
+              height: 30,
+              width: 30,
+              color: Colors.orange,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+              child: Text(reservaFInfo.sitio!),
+            ),
+          ],
         ),
       ),
       DataCell(Text(reservaFInfo.usuario!)),
@@ -97,13 +141,13 @@ DataRow ReservaFaDataRow(ReservaAnfFinal reservaFInfo, BuildContext context) {
         onPressed: () {},
         style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(primaryColor)),
-        child: const Text("Ver"),
+        child: Text(texts.myActiveReservations.toSee),
       )),
       DataCell(IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
             "assets/icons/pdf.svg",
-            color: isDark?Colors.white:primaryColor,
+            color: isDark ? Colors.white : primaryColor,
             width: 20,
             height: 20,
           ))),

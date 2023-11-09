@@ -1,9 +1,13 @@
+import "package:alan_voice/alan_voice.dart";
 import "package:flutter/material.dart";
+import "package:proyecto_final/chatbotweb/chatBotWeb.dart";
 import "package:proyecto_final/comentarios/screen/comentarioCard.dart";
 import "package:proyecto_final/comentarios/screen/comentarioCardTodo.dart";
 import "package:proyecto_final/comentarios/screen/headerComentario.dart";
+import "package:proyecto_final/generated/translations.g.dart";
 import "package:proyecto_final/responsive.dart";
 import "package:proyecto_final/theme/theme_constants.dart";
+import "package:universal_platform/universal_platform.dart";
 
 // Vista que contendra todos los componentes los cuales conformaran la vista de comentarios.
 
@@ -15,10 +19,24 @@ class ComentarioPage extends StatefulWidget {
 }
 
 class _ComentarioPageState extends State<ComentarioPage> {
+  _ComentarioPageState() {
+    if (!UniversalPlatform.isWeb) {
+      /// Init Alan Button with project key from Alan AI Studio
+      AlanVoice.addButton(
+          "257726fb1e303ccaf96867d4b3de54d42e956eca572e1d8b807a3e2338fdd0dc/stage",
+          buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT);
+
+      /// Handle commands from Alan AI Studio
+      AlanVoice.onCommand.add((command) {
+        debugPrint("got new command ${command.toString()}");
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+    final texts = Translations.of(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -27,7 +45,7 @@ class _ComentarioPageState extends State<ComentarioPage> {
             const HeaderComentario(),
             const SizedBox(height: defaultPadding),
             Text(
-              "Comentarios",
+              texts.comments.commentsUno,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
@@ -44,7 +62,7 @@ class _ComentarioPageState extends State<ComentarioPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Mis Comentarios",
+                    texts.comments.myComments,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
@@ -113,7 +131,7 @@ class _ComentarioPageState extends State<ComentarioPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Todos los comentarios",
+                    texts.comments.allCommets,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
@@ -174,6 +192,33 @@ class _ComentarioPageState extends State<ComentarioPage> {
           ],
         ),
       ),
+      floatingActionButton: _getFloating(),
     );
+  }
+
+  _getFloating() {
+    if (UniversalPlatform.isWeb) {
+      return FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChatBotWeb()),
+          );
+        },
+        child: Icon(Icons.support_agent),
+      );
+    } else if (UniversalPlatform.isWindows) {
+      return FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChatBotWeb()),
+          );
+        },
+        child: Icon(Icons.support_agent),
+      );
+    } else {
+      return null;
+    }
   }
 }

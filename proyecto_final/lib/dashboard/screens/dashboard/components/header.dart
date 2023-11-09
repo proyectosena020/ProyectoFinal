@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:proyecto_final/controllers/MenuAppController.dart';
+import 'package:proyecto_final/generated/translations.g.dart';
 import 'package:proyecto_final/responsive.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,9 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final text = Translations.of(context);
+    //final appState = context.findAncestorStateOfType<MyAppState>();
     return Row(
       children: [
         if (!Responsive.isDesktop(context))
@@ -29,7 +34,33 @@ class Header extends StatelessWidget {
         if (!Responsive.isMobile(context))
           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
         const Expanded(child: SearchField()),
-        const ProfileCard()
+        const ProfileCard(),
+        const SizedBox(width: 30),
+                DropdownButton(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          dropdownColor: isDark?secondaryColor:const Color(0xFFFF2F0F2),
+          value: TranslationProvider.of(context).locale,
+          items: [
+            DropdownMenuItem(
+              value: AppLocale.en,
+              child: Text(texts.lenguage.english),
+            ),
+            DropdownMenuItem(
+              value: AppLocale.es,
+              child: Text(texts.lenguage.spanish),
+            ),
+          ],
+          onChanged: (locale){
+            if(locale != null){
+              LocaleSettings.setLocale(locale);
+              if(locale.countryCode?.isNotEmpty ?? false){
+                Intl.defaultLocale = '${locale.languageCode}_${locale.countryCode}';
+              }else{
+              Intl.defaultLocale = locale.languageCode;
+            }
+            }
+          },
+        ),
       ],
     );
   }
@@ -90,7 +121,7 @@ class SearchField extends StatelessWidget {
 
     return TextField(
       decoration: InputDecoration(
-        hintText: "Search",
+        hintText: Translations.of(context).search,
         fillColor: isDark?secondaryColor:const Color(0xFFFF2F0F2),
         filled: true,
         border: const OutlineInputBorder(

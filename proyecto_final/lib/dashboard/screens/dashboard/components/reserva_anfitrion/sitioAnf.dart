@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:proyecto_final/generated/translations.g.dart';
+import 'package:proyecto_final/models/SitiosAnfitrionModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 
 // diseño de la card de vista previa de todos los sitios del anfitrion
 
 class SitioAnfCard extends StatelessWidget {
+
+  final SitiosAnfitrionModel sitio;
+
   const SitioAnfCard({
-    Key? key,
+    Key? key, required this.sitio,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    final texts = Translations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -21,7 +29,7 @@ class SitioAnfCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               boxShadow: const [
                 BoxShadow(
-                    color: primaryColor, blurRadius: 30, offset: Offset(10, 10))
+                    color: primaryColor, blurRadius: 10, offset: Offset(5, 5))
               ]),
           child: Column(
             children: <Widget>[
@@ -30,9 +38,9 @@ class SitioAnfCard extends StatelessWidget {
                 height: 300,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: const Image(
+                  child: Image(
                     image: NetworkImage(
-                        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/fc/c6/ba/briceno-18-campo-de-golf.jpg?w=1200&h=1200&s=1"),
+                        sitio.imagen),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -44,17 +52,17 @@ class SitioAnfCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Sopo, Colombia",
+              sitio.titulo,
               style: Theme.of(context).textTheme.titleSmall,
             ),
             Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.star,
-                  color: Colors.white,
+                  color: isDark ? Colors.white : primaryColor,
                 ),
                 Text(
-                  "4.8",
+                  sitio.calificacion,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
@@ -64,7 +72,7 @@ class SitioAnfCard extends StatelessWidget {
         Row(
           children: [
             Text(
-              "\$210,856 COP",
+              sitio.precio,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall!
@@ -73,7 +81,7 @@ class SitioAnfCard extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            const Text("noche"),
+            Text(texts.site.nights),
           ],
         ),
         const SizedBox(
@@ -107,7 +115,8 @@ class SitioAnfCard extends StatelessWidget {
               ),
               child: IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.delete, size: 25, color: Colors.black)),
+                  icon:
+                      const Icon(Icons.delete, size: 25, color: Colors.black)),
             ),
             const SizedBox(
               width: 5,
@@ -136,7 +145,8 @@ class SitioAnfCard extends StatelessWidget {
                 ),
                 child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.edit, size: 25, color: Colors.black)))
+                    icon:
+                        const Icon(Icons.edit, size: 25, color: Colors.black)))
           ],
         ),
         const SizedBox(

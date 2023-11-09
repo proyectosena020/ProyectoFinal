@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:proyecto_final/models/CardsReservas.dart';
+import 'package:proyecto_final/models/CardsReservasModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
 
 // Diseño de la card del conteo de las reservas las cuales estaran ubicadas en la parte superior de los dashboard
@@ -11,7 +11,7 @@ class FileInfoCard extends StatelessWidget {
     required this.info,
   }) : super(key: key);
 
-  final ReservaInfo info;
+  final ReservaInfoModel info;
 
   @override
   Widget build(BuildContext context) {

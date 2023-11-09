@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/sitioAnf.dart';
+import 'package:proyecto_final/models/SitiosAnfitrionModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
+
+import '../../../../../generated/translations.g.dart';
 
 // Contenedor el cual encapsula la vista previa de todos los sitios del anfitrión
 
@@ -13,7 +16,7 @@ class MisSitios extends StatelessWidget {
   Widget build(BuildContext context) {
 
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+    final texts = Translations.of(context);
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
@@ -24,7 +27,7 @@ class MisSitios extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Mis Sitios",
+            texts.site.mySites,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
@@ -33,10 +36,10 @@ class MisSitios extends StatelessWidget {
             child: Container(
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: 10,
+                  itemCount: SitiosAnfitrionList.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    return const SitioAnfCard();
+                    return SitioAnfCard(sitio: SitiosAnfitrionList[index],);
                   }),
             ),
           ),

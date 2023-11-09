@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/cards.dart';
-import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/misPagos.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/misPagosRecibidos.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/misSitios.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/reserva_activa_anf.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_anfitrion/reserva_cancelada_anf.dart';
@@ -12,7 +12,11 @@ import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_to
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/reserva_cancelada_todo.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/reserva_finalizada_todo.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/reserva_pendiente_todo.dart';
-import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/totalPagos.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/totalMultas.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/totalPagosAnfitrion.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_todo/totalPagosUsuario.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_usuario/misMultas.dart';
+import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_usuario/misPagos.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_usuario/reserva_cancelada_usu.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_usuario/reserva_finalizada_usu.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/reserva_usuario/reserva_pendiente_usu.dart';
@@ -61,6 +65,10 @@ class DashboardScreen extends StatelessWidget {
                               SizedBox(height: defaultPadding),
                               ReservaFinalizadaU(),
                               SizedBox(height: defaultPadding),
+                              Pagos(),
+                              SizedBox(height: defaultPadding),
+                              Multas(),
+                              SizedBox(height: defaultPadding),
                               MisSitios(),
                               SizedBox(height: defaultPadding),
                               PagosAnf(),
@@ -76,6 +84,10 @@ class DashboardScreen extends StatelessWidget {
                               Sitios(),
                               SizedBox(height: defaultPadding),
                               PagosTotal(),
+                              SizedBox(height: defaultPadding),
+                              PagosTotalAnf(),
+                              SizedBox(height: defaultPadding),
+                              MultasTotal(),
                               SizedBox(height: defaultPadding),
                               ListaUsuario(),
                               SizedBox(height: defaultPadding),

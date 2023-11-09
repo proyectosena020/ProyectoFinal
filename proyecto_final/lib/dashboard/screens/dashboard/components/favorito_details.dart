@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/dashboard/screens/dashboard/components/favorito.dart';
+import 'package:proyecto_final/models/FavoritoModel.dart';
 import 'package:proyecto_final/theme/theme_constants.dart';
+
+import '../../../../generated/translations.g.dart';
 
 // Contenedor el cual almacenara las cards de los sitios favoritos del usuario
 
@@ -12,7 +15,7 @@ class FavoritoDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-
+    final texts = Translations.of(context);
     return Container(
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
@@ -25,8 +28,8 @@ class FavoritoDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Sitios Favoritos",
+              Text(
+                texts.favorites.favoriteSites,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
@@ -35,10 +38,10 @@ class FavoritoDetails extends StatelessWidget {
               const SizedBox(height: defaultPadding),
               ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: 10,
+                  itemCount: FavoritoList.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    return const FavoritoCard();
+                    return FavoritoCard(favorito: FavoritoList[index],);
                   })
             ],
           ),
