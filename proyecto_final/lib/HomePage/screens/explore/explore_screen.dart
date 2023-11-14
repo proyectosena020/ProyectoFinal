@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/details/detailsPage.dart';
 import 'package:proyecto_final/theme/theme_manager.dart';
 import '../../../generated/translations.g.dart';
 import '../explore/components/search_app_bar.dart';
@@ -7,7 +8,6 @@ import 'components/card.dart';
 import 'package:proyecto_final/HomePage/colors/colors.dart';
 
 class ExploreScreen extends StatefulWidget {
-
   final ThemeManager themeManager;
 
   const ExploreScreen({super.key, required this.themeManager});
@@ -18,9 +18,8 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen>
     with SingleTickerProviderStateMixin {
-
   final ThemeManager themeManager;
-    
+
   late TabController _tabControllerCat;
 
   _ExploreScreenState(this.themeManager);
@@ -30,9 +29,9 @@ class _ExploreScreenState extends State<ExploreScreen>
     super.initState();
     _tabControllerCat = TabController(length: 5, vsync: this, initialIndex: 0);
   }
-  // lista de las cabañas 
-  final List<Sites> listCardsCab = [
 
+  // lista de las cabañas
+  final List<Sites> listCardsCab = [
     Sites(
       nombre: texts.home_sites.listCardsCab.siteOne.name,
       ubicacion: texts.home_sites.listCardsCab.siteOne.ubication,
@@ -67,9 +66,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg",
-          imagen2:
+      imagen2:
           "https://media.istockphoto.com/id/172765785/es/foto/sillas-reclinables-espera-con-una-vista-nival.jpg?s=1024x1024&w=is&k=20&c=xKUfu9-RNquUROa49ZfQ3m0F-wUVmMS7aVb8RkuVCzM=",
-          imagen3:
+      imagen3:
           "https://media.istockphoto.com/id/1200983629/es/foto/balc%C3%B3n-de-un-moderno-chalet-de-madera-con-tres-sillas-cubiertas-de-nieve-fresca.jpg?s=1024x1024&w=is&k=20&c=LyY3PZsCLGf3-2A_geNFYwPSR_8VdUG5Lk4WVmf8Qyk=",
       precio: 550000,
       comoLlegar: texts.home_sites.listCardsCab.siteThree.howToGet,
@@ -81,9 +80,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.9,
       imagen1:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen2:
+      imagen2:
           "https://media.istockphoto.com/id/1441992934/es/foto/feliz-familia-extendida-pasar-un-d%C3%ADa-de-primavera-juntos-en-una-terraza.jpg?s=1024x1024&w=is&k=20&c=dEE1X5KdTYSneY_GFiL13KfC-FSrMd_QvFQ4WR9U9cU=",
-          imagen3:
+      imagen3:
           "https://media.istockphoto.com/id/997910616/es/foto/mesa-de-vac%C3%ADo.jpg?s=1024x1024&w=is&k=20&c=LbqUz7pnQhSl8Ii9QUjvUq5TC0Plbqqr9sDSJh97V4A=",
       precio: 50000,
       comoLlegar: texts.home_sites.listCardsCab.siteFour.howToGet,
@@ -126,9 +125,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2016/11/30/08/48/bedroom-1872196_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2015/04/27/01/27/punta-cana-741296_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2014/08/11/21/40/bedroom-416062_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsMar.siteThree.howToGet,
@@ -140,16 +139,16 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.5,
       imagen1:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsMar.siteFour.howToGet,
       fechaDisp: '16-17 Dic',
     ),
   ];
-  // Lista de sitios unicos 
+  // Lista de sitios unicos
   final List<Sites> listCardsUnic = [
     Sites(
       nombre: texts.home_sites.listCardsUnic.siteOne.name,
@@ -157,9 +156,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2017/06/25/17/11/castle-2441302_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2017/06/25/17/11/castle-2441302_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2017/01/21/22/40/castle-1998435_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsUnic.siteOne.howToGet,
@@ -171,9 +170,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.5,
       imagen1:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsUnic.siteTwo.howToGet,
@@ -185,16 +184,16 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg",
-          imagen2:
+      imagen2:
           "https://media.istockphoto.com/id/172765785/es/foto/sillas-reclinables-espera-con-una-vista-nival.jpg?s=1024x1024&w=is&k=20&c=xKUfu9-RNquUROa49ZfQ3m0F-wUVmMS7aVb8RkuVCzM=",
-          imagen3:
+      imagen3:
           "https://media.istockphoto.com/id/1200983629/es/foto/balc%C3%B3n-de-un-moderno-chalet-de-madera-con-tres-sillas-cubiertas-de-nieve-fresca.jpg?s=1024x1024&w=is&k=20&c=LyY3PZsCLGf3-2A_geNFYwPSR_8VdUG5Lk4WVmf8Qyk=",
       precio: 550000,
       comoLlegar: texts.home_sites.listCardsUnic.siteThree.howToGet,
       fechaDisp: '10-12 Nov',
     ),
   ];
-  // Lista Castillos 
+  // Lista Castillos
   final List<Sites> listCardsCast = [
     Sites(
       nombre: texts.home_sites.listCardsCast.siteOne.name,
@@ -230,9 +229,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2017/06/25/17/11/castle-2441302_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2017/06/25/17/11/castle-2441302_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2017/01/21/22/40/castle-1998435_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsCast.siteThree.howToGet,
@@ -244,9 +243,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.5,
       imagen1:
           "https://cdn.pixabay.com/photo/2018/02/24/15/22/waters-3178363_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2021/07/19/05/04/fairmont-chateau-lake-louise-6477246_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsCast.siteFour.howToGet,
@@ -289,9 +288,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.0,
       imagen1:
           "https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2015/04/10/17/03/pots-716579_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsMab.siteThree.howToGet,
@@ -303,9 +302,9 @@ class _ExploreScreenState extends State<ExploreScreen>
       calificacion: 4.5,
       imagen1:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen2:
+      imagen2:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
-          imagen3:
+      imagen3:
           "https://cdn.pixabay.com/photo/2019/09/18/17/22/mountain-lake-4487292_1280.jpg",
       precio: 100000,
       comoLlegar: texts.home_sites.listCardsMab.siteFour.howToGet,
@@ -321,7 +320,9 @@ class _ExploreScreenState extends State<ExploreScreen>
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: <Widget>[
-            SearchComponent(themeManager: themeManager,),
+            SearchComponent(
+              themeManager: themeManager,
+            ),
             listViewCategory(),
             tabViewCategory(context),
           ],
@@ -428,7 +429,6 @@ class _ExploreScreenState extends State<ExploreScreen>
 
   // metodo que retorna el contenido de las categorias, misma lista para todo
   tabViewCategory(BuildContext context) {
-
     // variable que hace la funcion de responsive para todo tipo de pantallas
     int gridColumns = (MediaQuery.of(context).size.width / 290).floor();
     return Expanded(
@@ -436,186 +436,279 @@ class _ExploreScreenState extends State<ExploreScreen>
         controller: _tabControllerCat,
         children: [
           Container(
-            padding: const EdgeInsets.all(15),
-            child: LayoutBuilder(
-              builder: (context, responsive){
-                if (responsive.maxWidth <= 500){
-                  return GridView.builder(
-                    itemCount: listCardsCab.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.83,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsCab[index],
-                      );
-                    },
-                  );
-                }else{
-                  return GridView.builder(
-                    itemCount: listCardsCab.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: responsive.maxWidth >= 900 ? 4:2,
-                      childAspectRatio: responsive.maxWidth >= 900? 0.65:0.87,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsCab[index],
-                      );
-                    },
-                  );
-                }
-              },
-            )
-          ),
-
+              padding: const EdgeInsets.all(15),
+              child: LayoutBuilder(
+                builder: (context, responsive) {
+                  if (responsive.maxWidth <= 500) {
+                    return GridView.builder(
+                      itemCount: listCardsCab.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: 1,
+                        childAspectRatio: 0.83,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsCab[index],
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    return GridView.builder(
+                      itemCount: listCardsCab.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: responsive.maxWidth >= 900 ? 4 : 2,
+                        childAspectRatio:
+                            responsive.maxWidth >= 900 ? 0.65 : 0.87,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsCab[index],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              )),
           Container(
-            padding: const EdgeInsets.all(15),
-            child: LayoutBuilder(
-              builder: (context, responsive){
-                if (responsive.maxWidth <= 500){
-                  return GridView.builder(
-                    itemCount: listCardsMar.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.83,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsMar[index],
-                      );
-                    },
-                  );
-                }else{
-                  return GridView.builder(
-                    itemCount: listCardsMar.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: responsive.maxWidth >= 800 ? 4:2,
-                      childAspectRatio: 0.67,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsMar[index],
-                      );
-                    },
-                  );
-                }
-              },
-            )
-          ),
+              padding: const EdgeInsets.all(15),
+              child: LayoutBuilder(
+                builder: (context, responsive) {
+                  if (responsive.maxWidth <= 500) {
+                    return GridView.builder(
+                      itemCount: listCardsMar.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: 1,
+                        childAspectRatio: 0.83,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsMar[index],
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    return GridView.builder(
+                      itemCount: listCardsMar.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: responsive.maxWidth >= 800 ? 4 : 2,
+                        childAspectRatio: 0.67,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsMar[index],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              )),
           Container(
-            padding: const EdgeInsets.all(15),
-            child: LayoutBuilder(
-              builder: (context, responsive){
-                if (responsive.maxWidth <= 500){
-                  return GridView.builder(
-                    itemCount: listCardsUnic.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.83,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsUnic[index],
-                      );
-                    },
-                  );
-                }else{
-                  return GridView.builder(
-                    itemCount: listCardsUnic.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: responsive.maxWidth >= 900 ? 4:2,
-                      childAspectRatio: responsive.maxWidth >= 900? 0.65:0.87,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsUnic[index],
-                      );
-                    },
-                  );
-                }
-              },
-            )
-          ),
+              padding: const EdgeInsets.all(15),
+              child: LayoutBuilder(
+                builder: (context, responsive) {
+                  if (responsive.maxWidth <= 500) {
+                    return GridView.builder(
+                      itemCount: listCardsUnic.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: 1,
+                        childAspectRatio: 0.83,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsUnic[index],
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    return GridView.builder(
+                      itemCount: listCardsUnic.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: responsive.maxWidth >= 900 ? 4 : 2,
+                        childAspectRatio:
+                            responsive.maxWidth >= 900 ? 0.65 : 0.87,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsUnic[index],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              )),
           Container(
-            padding: const EdgeInsets.all(15),
-            child: LayoutBuilder(
-              builder: (context, responsive){
-                if (responsive.maxWidth <= 500){
-                  return GridView.builder(
-                    itemCount: listCardsCast.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.83,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsCast[index],
-                      );
-                    },
-                  );
-                }else{
-                  return GridView.builder(
-                    itemCount: listCardsCast.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: responsive.maxWidth >= 900 ? 4:2,
-                      childAspectRatio: responsive.maxWidth >= 900? 0.65:0.87,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsCast[index],
-                      );
-                    },
-                  );
-                }
-              },
-            )
-          ),
+              padding: const EdgeInsets.all(15),
+              child: LayoutBuilder(
+                builder: (context, responsive) {
+                  if (responsive.maxWidth <= 500) {
+                    return GridView.builder(
+                      itemCount: listCardsCast.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: 1,
+                        childAspectRatio: 0.83,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsCast[index],
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    return GridView.builder(
+                      itemCount: listCardsCast.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: responsive.maxWidth >= 900 ? 4 : 2,
+                        childAspectRatio:
+                            responsive.maxWidth >= 900 ? 0.65 : 0.87,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsCast[index],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              )),
           Container(
-            padding: const EdgeInsets.all(15),
-            child: LayoutBuilder(
-              builder: (context, responsive){
-                if (responsive.maxWidth <= 500){
-                  return GridView.builder(
-                    itemCount: listCardsHab.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.83,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsHab[index],
-                      );
-                    },
-                  );
-                }else{
-                  return GridView.builder(
-                    itemCount: listCardsHab.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // esto cambia a medida que el tamaño de la  pantalla cambia.
-                      crossAxisCount: responsive.maxWidth >= 900 ? 4:2,
-                      childAspectRatio: responsive.maxWidth >= 900? 0.65:0.87,
-                    ),
-                    itemBuilder: (context, index) {
-                      return CardSite(
-                        data: listCardsHab[index],
-                      );
-                    },
-                  );
-                }
-              },
-            )
-          ),
+              padding: const EdgeInsets.all(15),
+              child: LayoutBuilder(
+                builder: (context, responsive) {
+                  if (responsive.maxWidth <= 500) {
+                    return GridView.builder(
+                      itemCount: listCardsHab.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: 1,
+                        childAspectRatio: 0.83,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsHab[index],
+                          ),
+                        );
+                      },
+                    );
+                  } else {
+                    return GridView.builder(
+                      itemCount: listCardsHab.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        // esto cambia a medida que el tamaño de la  pantalla cambia.
+                        crossAxisCount: responsive.maxWidth >= 900 ? 4 : 2,
+                        childAspectRatio:
+                            responsive.maxWidth >= 900 ? 0.65 : 0.87,
+                      ),
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
+                          child: CardSite(
+                            data: listCardsHab[index],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              )),
         ],
       ),
     );

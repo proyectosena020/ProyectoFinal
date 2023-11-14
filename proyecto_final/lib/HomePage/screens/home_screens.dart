@@ -53,7 +53,7 @@ class _HomeScreenPageState extends State<HomeScreenPage>
             MaterialPageRoute(builder: (context) => const ChatBotWeb()),
           );
         },
-        child: Icon(Icons.support_agent),
+        child: const Icon(Icons.support_agent),
       );
     } else if (UniversalPlatform.isWindows) {
       return FloatingActionButton(
@@ -63,7 +63,7 @@ class _HomeScreenPageState extends State<HomeScreenPage>
             MaterialPageRoute(builder: (context) => const ChatBotWeb()),
           );
         },
-        child: Icon(Icons.support_agent),
+        child: const Icon(Icons.support_agent),
       );
     } else {
       return null;
