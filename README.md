@@ -4,7 +4,7 @@
 StayAway es una aplicación multiplataforma 📱🖥️ diseñada para revolucionar la experiencia de reserva en viajes y turismo. Con un enfoque integral, ofrece a los usuarios la capacidad de reservar hospedajes y actividades recreativas de manera eficiente. Destaca por su accesibilidad, seguridad y características innovadoras, como reconocimiento facial, chatbots para asistencia instantánea, traducción multilenguaje, y un buscador avanzado. StayAway se compromete a simplificar el proceso de planificación de viajes, brindando una experiencia completa y sin complicaciones para viajeros y anfitriones.
 
 
-## Lenguajes Utilizados
+## Tecnologias usadas
 
 
 [![My Skills](https://skillicons.dev/icons?i=django,postgres,dart,python,flutter&perline=3)](https://skillicons.dev)
