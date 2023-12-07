@@ -21,3 +21,15 @@ StayAway es una aplicación multiplataforma 📱🖥️ diseñada para revolucio
 | Dorado Dark | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
 | Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
 | Example Color | ![#E3CA0E](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+
+
+
+
+## Desarrolladores 
+
+- Santiago Montaño Hernandez
+- Sebastian Tovar
+- William Garzon
+- Diego Jaimes
+
+
