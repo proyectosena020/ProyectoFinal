@@ -109,10 +109,11 @@ En el apartado de fechas las manejamos por 2 calendarios:
 
 ## Temas
 El aplicativo cuenta con dos temas, modo claro y modo oscuro.
-| Modo Claro        | Modo Oscuro                               |
+
+| Modo claro                              | Modo Oscuro
 |----------------------------------------|----------------------------------------|
-| 
-![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/31588c98-3a8a-496c-be26-d33d65afcceb) | ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/bc84ce8c-cf82-4ddb-9d01-65d7a845cb50)|
+| ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/31588c98-3a8a-496c-be26-d33d65afcceb)|![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/bc84ce8c-cf82-4ddb-9d01-65d7a845cb50)|
+
 
 
 
