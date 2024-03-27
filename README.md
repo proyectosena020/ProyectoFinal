@@ -2,9 +2,6 @@
 
 StayAway es una aplicación multiplataforma 📱🖥️ diseñada para revolucionar la experiencia de reserva en viajes y turismo. Con un enfoque integral, ofrece a los usuarios la capacidad de reservar hospedajes y actividades recreativas de manera eficiente. Destaca por su accesibilidad, seguridad y características innovadoras, como reconocimiento facial, chatbots para asistencia instantánea, traducción multilenguaje, y un buscador avanzado. StayAway se compromete a simplificar el proceso de planificación de viajes, brindando una experiencia completa y sin complicaciones para viajeros y anfitriones.
 
-## Logo
-
-![App Screenshot](https://github.com/proyectosena020/ProyectoFinal/blob/main/logo.png?raw=true)
 
 
 ## Color Reference
@@ -32,28 +29,6 @@ StayAway es una aplicación multiplataforma 📱🖥️ diseñada para revolucio
 
 
 
-## Iniciar en local
-
-Para inicializar el socket 
-
-```bash
-  npm run dev
-```
-
-
-Para inicializar el flutter
-
-```bash
-  flutter run -d web-server --web-port=65500
-```
-    
-Para inicializar api
-
-```bash
-  python manage.py runserver
-```
-    
-
 
 # 🚀 Splash Screen
 
@@ -75,16 +50,13 @@ Tiene un indicador: a medida que avanza la sección, se va llenando ese indicado
 
 ![WhatsApp Image 2024-02-08 at 4 48 06 PM](https://github.com/SantiagoHernandez20/Proyectos_kotlin/assets/98421206/cfbd4b3f-fad5-433c-b9ae-a6e468b61ad6)
 
-```
-```
 
 # 🚀 Pagina Principal
 Esta es la vista principal luego de mostrarse el SplashScreen.
 
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/39dc171a-34bf-40ec-b16e-09ac43853d73)
 
-```
-```
+
 
 ## AppBar
 
@@ -99,24 +71,19 @@ Cuenta con un "AppBar" que contiene los siguientes items:
 - Alternar temas Claro/Oscuro
 - Seleccionar idioma
 - Categiorias
-```
-```
+
 
 ## Busqueda de sitios
  ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/7488a321-0c61-44a8-931c-c973fbe8e3da)
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/3413ad74-aff6-413f-a2fd-8c9893d8196a)
-```
-```
-```
-```
+
 Cuando le damos click al icono de la lupa nos mostrara la pestaña de busqueda, la cual tiene 3 entradas para buscar sitios.
 
 - Region
 
 - Fechas 
 - Huespedes
-```
-```
+
 ### Region
 La busqueda de sitios esta distribuida por contienentes:
 - Amercia del sur
@@ -140,9 +107,6 @@ En el apartado de fechas las manejamos por 2 calendarios:
  - Bebes 
  - Mascotas 
 
-```
-```
-
 ## Temas
 El aplicativo cuenta con dos temas, modo claro y modo oscuro.
 | Modo Claro                              | Modo Oscuro                               |
@@ -157,10 +121,6 @@ la elección entre los modos claro y oscuro en aplicaciones y sitios web es cruc
 
 
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/f2c48d07-0d93-4d73-8d3b-0445a4e569b2)
-```
-```
-```
-```
 
 
 ## Idioma
@@ -175,10 +135,7 @@ entre los dos idiomas que tiene.
 | ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/568bd24a-e29f-44cf-acde-dadcdf60215b)| ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/bc61f6d4-ba07-48e8-b2c2-3e475ba08df4)|
 
 
-```
-```
-```
-```
+
 ## Card de los sitios
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/a21e20ae-a637-49c0-93fd-d080252fb31a)
 
@@ -194,8 +151,7 @@ Esta card contiene los siguientes items:
 Cuando el usuario quiera agregar a favoritos el sitio pero aun no ha iniciado sesion le mostrara la siguiente alerta
 
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/7f06d010-3dff-467d-b577-ea3532f344aa)
-```
-```
+
 
 # 🚀 Detalles del sitio
 
@@ -222,10 +178,6 @@ Haciendo scroll en la vista de detalles seguira viendo informacion sobre el siti
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/8e1d61c0-88cf-4d23-b1b0-e376df1b7b22)
 
 
-```
-```
-```
-```
 Mas abajo seguira encontrando informacion sobre el sitio, como por ejemplo cuantas camas, habitaciones tiene el sitio.
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/86b23266-a116-4556-8ff5-0082f081a8b5)
 
@@ -238,8 +190,7 @@ Llegando casi a lo ultimo podra ver un calendario con la disponibilidad del siti
 
 ![image](https://github.com/proyectosena020/ProyectoFinal/assets/98421206/3d50e96f-2e25-479b-80a2-6e9b15dc17d0)
 
-```
-```
+
 
 En la parte de la derecha de los detalles se mostrara la card que contiene la informacion sobre la reserva, la fecha de llegada, fecha de salida, cuantos huespedes y el total.
 
@@ -261,11 +212,6 @@ Contendra un video explicativo de como realizar la reserva por si el usuario des
 
 
 
-```
-```
-
-```
-```
 
 Llegando a lo ultimo de la vista de detalles del sitio, encontrara las calificaciones y comentarios sitio.
 
